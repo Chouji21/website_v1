@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+firebase-admin
+pandas
+numpy
+openpyxl
+python-multipart
+python-dotenv

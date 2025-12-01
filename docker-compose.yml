@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./serviceAccountKey.json:/app/serviceAccountKey.json # Mount secret if needed
+    environment:
+      - FIREBASE_CREDENTIALS_PATH=/app/serviceAccountKey.json
+    networks:
+      - app-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
