@@ -7,7 +7,6 @@ services:
       - "8000:8000"
     volumes:
       - ./backend:/app
-      - ./serviceAccountKey.json:/app/serviceAccountKey.json # Mount secret if needed
     environment:
       - FIREBASE_CREDENTIALS_PATH=/app/serviceAccountKey.json
     networks:
